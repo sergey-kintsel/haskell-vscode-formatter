@@ -1,10 +1,14 @@
 {
   "name": "haskell-formatter-vscode-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergey-kintsel/haskell-vscode-formatter"
+  },
   "displayName": "Haskell Code Formatter",
   "version": "0.0.1",
   "description": "The Haskell code formatter that applies both hindent and stylish-haskell",
   "author": "Sergey Kintsel",
-  "publisher": "Sergey Kintsel",
+  "publisher": "sergey-kintsel",
   "license": "MIT",
   "private": false,
   "dependencies": {},
