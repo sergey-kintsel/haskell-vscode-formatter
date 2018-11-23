@@ -1,0 +1,40 @@
+{
+  "name": "haskell-formatter-vscode-extension",
+  "displayName": "Haskell Code Formatter",
+  "version": "0.0.1",
+  "description": "The Haskell code formatter that applies both hindent and stylish-haskell",
+  "author": "Sergey Kintsel",
+  "publisher": "Sergey Kintsel",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "engines": {
+    "vscode": "^1.29.1"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "haskell",
+        "aliases": [
+          "Haskell"
+        ]
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:haskell"
+  ],
+  "scripts": {
+    "compile": "tsc",
+    "postinstall": "node ./node_modules/vscode/bin/install && tsc"
+  },
+  "main": "./out/src/extension",
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "typescript": "^3.1.6",
+    "vscode": "^1.1.21"
+  }
+}
