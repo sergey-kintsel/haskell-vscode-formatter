@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.languages.registerDocumentRangeFormattingEditProvider(haskellLangId, {
     provideDocumentRangeFormattingEdits(document, range, options, token) {
       const showErrorMessage = (friendlyText, error) => {
-        vscode.window.showErrorMessage(`${friendlyText}\n${error.stdout.toString()}`);
+        vscode.window.showErrorMessage(`${friendlyText}\n${error.stderr.toString()}`);
         return [];
       }
 

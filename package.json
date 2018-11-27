@@ -5,7 +5,7 @@
     "url": "https://github.com/sergey-kintsel/haskell-vscode-formatter"
   },
   "displayName": "Haskell Code Formatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Haskell code formatter that applies both hindent and stylish-haskell",
   "author": "Sergey Kintsel",
   "publisher": "sergey-kintsel",
