@@ -14,3 +14,10 @@ stack install stylish-haskell hindent
 2. Add .stylish-haskell config autosearch
 3. Binary paths configs in VSCode
 
+## CHANGES
+
+v0.0.3
+
+Note the working directory of the hindent and stylish-haskell will be
+the top level workspace directory and any `.hindent.yaml` or `stylish-haskell.yaml`
+will be picked up from there.
