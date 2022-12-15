@@ -1,5 +1,6 @@
-import * as vscode from 'vscode';
 import * as proc from 'child_process';
+import * as pathModule from 'path';
+import * as vscode from 'vscode';
 
 const haskellLangId = 'haskell';
 export function activate(context: vscode.ExtensionContext) {
@@ -22,15 +23,17 @@ export function activate(context: vscode.ExtensionContext) {
       }
 
       const text = document.getText(range);
+      const editor = vscode.window.activeTextEditor;
+      const dir = editor == null ? undefined : pathModule.dirname(editor.document.uri.fsPath);
       let hindentedText;
       try {
-        hindentedText = proc.execSync('hindent', {input: text}).toString();
+        hindentedText = proc.execSync('hindent', { input: text, cwd: dir }).toString();
       } catch (e) {
         return showErrorMessage('hindent failed to format the code', e);
       }
       let styledText;
       try {
-        styledText = proc.execSync('stylish-haskell', {input: hindentedText}).toString();
+        styledText = proc.execSync('stylish-haskell', { input: hindentedText, cwd: dir }).toString();
       } catch (e) {
         return showErrorMessage('stylish-haskell failed to format the code', e);
       }
